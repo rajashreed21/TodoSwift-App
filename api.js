@@ -20,10 +20,7 @@ app.post('/createtodo', async (req, res) => {
     const todoBody = req.body;
 
     const todo = await todos.create({
-        title: todoBody.title,
-        desc: todoBody.desc,
-        time: todoBody.time,
-        
+        title: todoBody.title,        
         
     });
 
