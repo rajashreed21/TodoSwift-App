@@ -28,18 +28,18 @@ app.post('/createtodo', async (req, res) => {
 })
 
 app.get('/tododata', async (req, res) => {
-    try {
+   // try {
         const todoData = await todos.find({});
-        if(todoData.length>0){
-            res.json(todoData[0]);
-        }else{
-            res.status(404).json({error:"No todo found"})
-        }
+        //if(todoData.length>0){
+            res.json(todoData);
+        //}else{
+            //res.status(404).json({error:"No todo found"})
+       // }
         
-    } catch (error) {
-        console.error("Error while fetching users:", error);
-        res.status(500).json({ error: "Internal server error"});
-    }
+   // } catch (error) {
+     //   console.error("Error while fetching users:", error);
+       // res.status(500).json({ error: "Internal server error"});
+    //}
 });
 
 app.delete('/delete/:id', async (req, res) => {
